@@ -2,15 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cookie : MonoBehaviour {
+namespace CookieClicker
+{
+    public class Cookie : MonoBehaviour
+    {
+        public int clickModifier = 1;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        public delegate void ClickCallback(Vector3 point);
+        public ClickCallback onClick;
+
+        private int clicksToAdd = 1;
+
+        public void Click(Vector3 point)
+        {
+            // Increment clicks
+            GameManager.Instance.AddCookies(clicksToAdd * clickModifier);
+
+            // Are there functions subscribed with onClick?
+            if(onClick != null)
+            {
+                // Call all subscribed functions
+                onClick.Invoke(point);
+            }
+        }
+    }
 }

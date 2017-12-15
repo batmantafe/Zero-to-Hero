@@ -2,15 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserInput : MonoBehaviour {
+namespace CookieClicker
+{
+    [RequireComponent(typeof(Cookie))]
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public class UserInput : MonoBehaviour
+    {
+        private Cookie cookie;
+
+        // Use this for initialization
+        void Start()
+        {
+            cookie = GetComponent<Cookie>();
+        }
+
+        // Only check for mouse down only if mouse is over cookie
+        void OnMouseOver()
+        {
+            // Check for mouse down
+            if (Input.GetMouseButtonDown(0))
+            {
+                // Convert screen to world point
+                Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                // Click that cookie!
+                cookie.Click(point);
+            }
+        }
+    }
 }
