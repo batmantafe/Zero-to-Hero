@@ -37,6 +37,7 @@ namespace CookieClicker
         void Start()
         {
             images = background.GetComponentsInChildren<Image>();
+            Refresh();
         }
 
         void Refresh()
@@ -45,7 +46,7 @@ namespace CookieClicker
             for (int i = 0; i < images.Length; i++)
             {
                 // Set all sprites to icon
-                images[i].sprite = data.icon;
+                images[i].sprite = data.background;
             }
         }
         

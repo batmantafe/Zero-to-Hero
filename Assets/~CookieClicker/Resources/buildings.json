@@ -1,0 +1,55 @@
+[
+
+  {
+
+    // Building Data
+
+    "icon": "4",
+
+    "name": "Grandma",
+
+    "cost": 10,
+
+    "owned": 0,
+
+    "perSecond": 0.2,
+
+    "costModifier": 1.2,
+
+    // Activity Data
+
+    "hasActivity": true,
+
+    "activityIcon": "grandma",
+
+    "activityBackground": "grandmaBackground"
+
+  },
+
+  {
+
+    // Building Data
+
+    "icon": "12",
+
+    "name": "Farm",
+
+    "cost": 10,
+
+    "owned": 0,
+
+    "perSecond": 10,
+
+    "costModifier": 1.2,
+
+    // Activity Data
+
+    "hasActivity": true,
+
+    "activityIcon": "farm",
+
+    "activityBackground": "farmBackground"
+
+  }
+
+]
